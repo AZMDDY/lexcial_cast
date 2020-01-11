@@ -159,6 +159,16 @@ struct Converter<std::string, SrcType> {
 };
 
 // to string
+template <unsigned N>
+struct Converter<std::string, char[N]> {
+    static std::string Convert(const char (&src)[N])
+    {
+        std::string str(src);
+        return std::move(str);
+    }
+};
+
+// to string
 template <>
 struct Converter<std::string, bool> {
     static std::string Convert(bool src)

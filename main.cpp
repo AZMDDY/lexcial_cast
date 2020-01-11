@@ -38,6 +38,9 @@ int main(int argc, char** argv)
     cout << LexicalCast<bool>(case3) << endl;
     cout << LexicalCast<bool>(case6) << endl;
     cout << LexicalCast<bool>(case9) << endl;
-
+    
+    cout << LexicalCast<string>(case1) << endl;
+    cout << LexicalCast<string>(case4) << endl;
+    cout << LexicalCast<string>("12333.33") << endl;
     return 0;
 }

@@ -69,6 +69,3 @@ typename std::enable_if<std::is_same<DestType, SrcType>::value, DestType>::type 
 + double <-> string
 + long double <-> string
 + bool <-> string [true <-> "true", false <-> "false"]
-
-
-
