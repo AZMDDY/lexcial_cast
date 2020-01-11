@@ -61,13 +61,13 @@ typename std::enable_if<std::is_same<DestType, SrcType>::value, DestType>::type 
 ## 功能
 
 + int <-> string
-+ float <-> string
-+ double <-> string
-+ long double <-> string
 + long <-> string
 + unsigned long <-> string
 + long long <-> string
 + unsigned long long <-> string
++ float <-> string
++ double <-> string
++ long double <-> string
 + bool <-> string [true <-> "true", false <-> "false"]
 
 

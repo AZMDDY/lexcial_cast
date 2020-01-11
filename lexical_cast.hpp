@@ -16,7 +16,7 @@ template <typename SrcType>
 struct Converter<int, SrcType> {
     static int Convert(const SrcType& src)
     {
-        return std::atoi(src);
+        return std::stoi(src);
     }
 };
 
@@ -25,7 +25,7 @@ template <typename SrcType>
 struct Converter<long, SrcType> {
     static long Convert(const SrcType& src)
     {
-        return std::strtol(src, nullptr, 0);
+        return std::stol(src);
     }
 };
 
@@ -34,7 +34,7 @@ template <typename SrcType>
 struct Converter<unsigned long, SrcType> {
     static unsigned long Convert(const SrcType& src)
     {
-        return std::strtoul(src, nullptr, 0);
+        return std::stoul(src, nullptr, 0);
     }
 };
 
@@ -43,7 +43,7 @@ template <typename SrcType>
 struct Converter<long long, SrcType> {
     static long long Convert(const SrcType& src)
     {
-        return std::strtoll(src, nullptr, 0);
+        return std::stoll(src, nullptr, 0);
     }
 };
 
@@ -52,7 +52,7 @@ template <typename SrcType>
 struct Converter<unsigned long long, SrcType> {
     static unsigned long long Convert(const SrcType& src)
     {
-        return std::strtoull(src, nullptr, 0);
+        return std::stoull(src, nullptr, 0);
     }
 };
 
@@ -61,15 +61,7 @@ template <typename SrcType>
 struct Converter<double, SrcType> {
     static double Convert(const SrcType& src)
     {
-        return std::strtod(src, nullptr);
-    }
-};
-
-template <typename SrcType>
-struct Converter<long double, SrcType> {
-    static long double Convert(const SrcType& src)
-    {
-        return std::strtold(src, nullptr);
+        return std::stod(src);
     }
 };
 
@@ -78,7 +70,16 @@ template <typename SrcType>
 struct Converter<float, SrcType> {
     static float Convert(const SrcType& src)
     {
-        return std::strtof(src, nullptr);
+        return std::stof(src);
+    }
+};
+
+// to long doulbe
+template <typename SrcType>
+struct Converter<long double, SrcType> {
+    static long double Convert(const SrcType& src)
+    {
+        return std::stold(src);
     }
 };
 
